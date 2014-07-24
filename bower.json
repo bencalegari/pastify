@@ -1,0 +1,11 @@
+{
+	"name": "pastify",
+	"version": "1.0.0",
+	"dependencies": {
+		"foundation": "latest",
+		"font-awesome": "latest",
+		"angular": "latest",
+		"angular-route": "latest",
+		"animate.css": "latest"
+	}
+}

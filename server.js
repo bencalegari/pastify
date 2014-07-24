@@ -4,10 +4,12 @@ var app            = express();
 var mongoose       = require('mongoose');
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
+var DotEnv 		   = require('dotenv-node')
 
 // configuration ===========================================
 	
 // config files
+new DotEnv():
 var db = require('./config/db');
 
 var port = process.env.PORT || 8080; // set our port
