@@ -9,7 +9,7 @@ var DotEnv 		   = require('dotenv-node')
 // configuration ===========================================
 	
 // config files
-new DotEnv():
+new DotEnv();
 var db = require('./config/db');
 
 var port = process.env.PORT || 8080; // set our port
@@ -30,3 +30,6 @@ require('./app/routes')(app); // configure our routes
 app.listen(port);										// startup our app at http://localhost:8080
 console.log('Magic happens on port ' + port); 			// shoutout to the user
 exports = module.exports = app; 						// expose app
+
+// process.env.S3_BUCKET;
+// process.env.SECRET_KEY;
