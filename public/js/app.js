@@ -1,1 +1,1 @@
-angular.module('Pastify', ['ngRoute', 'appRoutes', 'MainCtrl']);	
+var app = angular.module('Pastify', ['ngRoute', 'appRoutes']);

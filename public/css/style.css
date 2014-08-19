@@ -1,0 +1,12 @@
+body {
+	background-color: #293B47
+}
+
+.header h1,.header h6 {
+	text-align: center;
+	color: white;
+}
+
+#spotify-login {
+	margin-top: 200px;
+}
