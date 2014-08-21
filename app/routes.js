@@ -7,14 +7,9 @@ var User 			= require('./models/user')
 module.exports = function(app) {
 
 	// server routes ===========================================================
-	// handle things like api calls
-	// authentication routes
-
-	// sample api route
 	app.get('/api/users/:username', function(req, res) {
-		// use mongoose to get all nerds in the database
-		User.find({
-			username: req.params.username 
+		User.findOne({
+			spotify_username: req.params.username 
 		}, function(err, user) {
 			if (err)
 				res.send(err);
@@ -22,7 +17,6 @@ module.exports = function(app) {
 		});
 	});
 
-	// route to handle creating (app.post)
 	app.post('/api/users/', function(req, res) {
 		User.create({
 			name: req.body.somethin,

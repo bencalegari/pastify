@@ -6,7 +6,12 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		})
 		.when('/playlists/:username', {
 			templateUrl: '/views/playlists.html',
-			controller: 'PlaylistController'
+			controller: 'PlaylistController',
+			resolve: {
+				username: function($route) {
+					return $route.current.params.username;
+				}
+			}
 		})
 		.otherwise({
 			redirectTo: '/'
