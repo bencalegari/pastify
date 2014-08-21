@@ -4,7 +4,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: 'views/home.html',
 			controller: 'MainController'
 		})
-		.when('/playlists', {
+		.when('/playlists/:username', {
 			templateUrl: 'views/playlists.html',
 			controller: 'PlaylistController'
 		})

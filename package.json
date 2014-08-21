@@ -9,6 +9,8 @@
 		"dotenv-node" : "latest",
 		"request" : "latest",
 		"querystring" : "latest",
-		"node-inspector" : "latest"
+		"node-inspector" : "latest",
+		"passport-spotify" : "latest",
+		"passport" : "latest"
 	  }
 	}

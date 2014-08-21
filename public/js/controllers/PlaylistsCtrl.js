@@ -1,3 +1,3 @@
-app.controller('PlaylistController', function($scope) {
-	
+app.controller('PlaylistController', function($scope, $location) {
+	debugger;
 });
