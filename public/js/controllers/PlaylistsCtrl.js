@@ -1,3 +1,3 @@
-app.controller('PlaylistController', function($scope, $location) {
-	debugger;
+app.controller('PlaylistController', function($scope) {
+	console.log('Playlist controller!')
 });
