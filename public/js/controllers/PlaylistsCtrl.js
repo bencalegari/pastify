@@ -1,4 +1,4 @@
-app.controller('PlaylistController', function($scope, $location, username, Users) {
+app.controller('PlaylistController', function($scope, $location, spotifyService, username, Users) {
 	var access_token;
 	var refresh_token;
 	Users.get(username)
