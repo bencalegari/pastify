@@ -55,6 +55,8 @@ module.exports = function(app) {
 		  	// If the user exists, find them and redirect to their page. 
 		  	User.find({ username: username }, function(err, user) {
 				if (!err && user.length > 0) {
+					// Refresh access token.
+					User.update({username: username}, {callback_token: newToken});
 					res.redirect('/' + user.username)
 				} else if (err) {
 					res.send(err);
@@ -78,47 +80,6 @@ module.exports = function(app) {
 					})
 				}
 			});
-		  	
-		  	
-		  	
 		}
 	);
-
-
-		
-
-				// var options = {
-				// 	url: 'https://api.spotify.com/v1/me',
-				// 	headers: { 'Authorization': 'Bearer ' + access_token },
-				// 	json: true
-				// };
-
-		        // res.redirect('/playlists?' +
-				      //   querystring.stringify({
-				      //       access_token: access_token,
-				      //       refresh_token: refresh_token
-				      //   }));
-		        // request.get(options, function(error, response, body) {
-		        // 	if (!error && response.statusCode === 200) {
-		        // 		console.log('Getting Playlist...');
-		        // 		var user_id = body.id.toLowerCase();         
-			       //      var options = {
-			       //      	url: 'https://api.spotify.com/v1/users/' + user_id + '/playlists',
-			       //          headers: {
-			       //              'Authorization': 'Bearer ' + access_token
-			       //          },
-			       //          json: true
-			       //      }
-			       //      request.get(options, function(error, response, body) {
-			       //          if (!error && response.statusCode === 200) {
-			       //          	console.log(body.items);
-			       //          }
-			       //      });	
-		        // 	}
-		        // });
-	        // };
-		// });
-
-		// res.sendfile('./public/views/index.html')
-	// })
 };
