@@ -11,6 +11,7 @@
 		"querystring" : "latest",
 		"node-inspector" : "latest",
 		"passport-spotify" : "latest",
-		"passport" : "latest"
+		"passport" : "latest",
+		"spotify-web-api-node": "1.0.0"
 	  }
 	}
