@@ -9,7 +9,7 @@ module.exports = function(app) {
 	// server routes ===========================================================
 	app.get('/api/users/:username', function(req, res) {
 		User.findOne({
-			spotify_username: req.params.username 
+			username: req.params.username 
 		}, function(err, user) {
 			if (err)
 				res.send(err);
@@ -20,7 +20,7 @@ module.exports = function(app) {
 	app.post('/api/users/', function(req, res) {
 		User.create({
 			name: req.body.somethin,
-			spotify_username: req.body.username,
+			username: req.body.username,
 			access_token: req.user.access_token,
 			refresh_token: req.user.refresh_token
 		}, function(err, user) {
@@ -64,17 +64,17 @@ module.exports = function(app) {
 					// If not, create the user.
 					User.create({
 				  		name: req.user.profile.displayName,
-						spotify_username: username,
+						username: username,
 						access_token: req.user.accessToken,
 						refresh_token: req.user.refreshToken
 					}, function(err, user) {
 						if (err)
 							res.send(err)
-						User.findOne({ spotify_username: user.spotify_username}, function(err, new_user){
+						User.findOne({ username: user.username}, function(err, new_user){
 							if (err) {
 								res.send("Whoops! Can't find that user. Look: " + err);
 							} else {
-								res.redirect('/playlists/' + new_user.spotify_username)	
+								res.redirect('/playlists/' + new_user.username)	
 							}
 						})
 					})

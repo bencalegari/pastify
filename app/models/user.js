@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 module.exports = mongoose.model( 'User', {
 	name: String,
-	spotify_username: String,
+	username: String,
 	playlists: [{
 		name: String,
 		url: String
